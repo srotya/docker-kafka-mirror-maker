@@ -42,3 +42,7 @@ docker run -it -e DESTINATION=xxx.xxx.com:6667 -e SECURITY=SASL_PLAINTEXT -e SOU
 ```
 
 **Note: the image automatically applies Kerberos runtime configuration for Mirror Maker if SASL_PLAINTEXT security is configured**
+
+### License
+
+Apache 2.0 Copyright 2017 Ambud Sharma
