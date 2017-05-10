@@ -43,6 +43,35 @@ docker run -it -e DESTINATION=xxx.xxx.com:6667 -e SECURITY=SASL_PLAINTEXT -e SOU
 
 **Note: the image automatically applies Kerberos runtime configuration for Mirror Maker if SASL_PLAINTEXT security is configured**
 
+#### Kubernetes Usage
+
+To deploy this image in Kubernetes here's the template.
+
+```
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: mirror-maker
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        name: mirror-maker
+    spec:
+      containers:
+      - name: mirror-maker
+        image: ambuds/mirror-maker
+        imagePullPolicy: Always
+        env:
+        - name: "WHITELIST"
+          value: "*"
+        - name: "DESTINATION"
+          value: "localhost:9092"
+        - name: "SOURCE"
+          value: "localhost:9092"
+```
+
 ### License
 
 Apache 2.0 Copyright 2017 Ambud Sharma
