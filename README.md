@@ -74,4 +74,4 @@ spec:
 
 ### License
 
-Apache 2.0 Copyright 2017 Ambud Sharma
+Apache 2.0
