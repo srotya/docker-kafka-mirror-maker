@@ -23,6 +23,7 @@ docker build -t mirror-maker:latest .
 |     GROUPID         | Consumer group id for Kafka consumer | _mirror_maker |
 |    PRINCIPAL        | Kerberos security principal name | kafka/localhost@EXAMPLE.COM |
 |  KEYTAB_FILENAME    | File name for Kerberos Keytab | mirror.keytab |
+|  DEBUG_MODE         | Sets Debug Mode | false |
 
 ### Volumes
 Image requires that the keytab file and krb5.conf be mounted if Kerberos is used when deploying this container.

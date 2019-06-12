@@ -18,4 +18,8 @@ if echo "${SECURITY}" | grep -q "SASL" ;then
   ls -lh /etc/security/keytabs
 fi
 
+if [[ "${DEBUG_MODE}" == "true" ]]; then
+  sed -i 's/WARN/DEBUG/g' /usr/hdp/current/kafka-broker/config/tools-log4j.properties
+fi
+
 /usr/hdp/current/kafka-broker/bin/kafka-mirror-maker.sh --whitelist ${WHITELIST} --abort.on.send.failure true --new.consumer --producer.config /etc/mirror-maker/producer.config --consumer.config /etc/mirror-maker/consumer.config

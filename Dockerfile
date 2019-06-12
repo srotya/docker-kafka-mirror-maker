@@ -10,8 +10,8 @@ ENV PRINCIPAL "kafka/localhost@EXAMPLE.COM"
 ENV KEYTAB_FILENAME "mirror.keytab"
 
 RUN yum -y install wget
-RUN rpm --import http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.5.3.0/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins
-RUN cd /etc/yum.repos.d/;wget http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.5.3.0/hdp.repo
+RUN rpm --import http://public-repo-1.hortonworks.com/HDP/centos7/3.x/updates/3.1.0.0/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins
+RUN cd /etc/yum.repos.d/;wget http://public-repo-1.hortonworks.com/HDP/centos7/3.x/updates/3.1.0.0/hdp.repo
 RUN yum -y install kafka
 RUN yum -y install gettext
 
